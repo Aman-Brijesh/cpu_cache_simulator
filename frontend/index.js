@@ -17,7 +17,7 @@ function accessMemory(){
         console.log(tag,index,offset);
 
         let blockNumber = parseInt(index, 2);
-        console.log(blockNumber);
+        console.log(blockNumber+1);
 
 
         if(cache[blockNumber] == tag){
@@ -25,6 +25,10 @@ function accessMemory(){
         }else{
             console.log("Miss");
             cache[blockNumber] = tag;
+            localStorage.setItem("cache", JSON.stringify(cache));
         }
     }
+    
+    
+    
 }
